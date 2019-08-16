@@ -1,7 +1,8 @@
 module.exports = {
   findResources,
   findTasks,
-  getProjects
+  getProjects,
+  addTasks
 };
 
 const express = require("express");
@@ -33,6 +34,12 @@ function findTasks() {
     );
 }
 
-//  adding tasks.
-//  retrieving a list of tasks. The list of tasks should include the project name and project description.
-//  When returning project or task information, the completed property should be true or false.
+// function addTasks() {
+//   return db("projects as p")
+//     .innerJoin("tasks as t", "p.id", "t.project_id")
+//     .select("t.task_description", "p.id", "t.project_id");
+// }
+
+function addTasks(task) {
+  return db("tasks").insert(task);
+}

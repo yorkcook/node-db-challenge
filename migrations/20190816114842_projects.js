@@ -27,6 +27,7 @@ exports.up = function(knex) {
         .notNullable()
         .unique();
       tbl.string("notes", 255);
+      tbl.integer("project_id").notNullable();
       tbl
         .boolean("project_completed")
         .notNullable()

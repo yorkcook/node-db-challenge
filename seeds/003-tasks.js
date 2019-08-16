@@ -8,6 +8,7 @@ exports.seed = function(knex) {
         {
           task_description: "Please do the work",
           notes: "I will buy you ice cream",
+          project_id: 1,
           project_completed: false
         }
       ]);
