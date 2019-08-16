@@ -25,7 +25,7 @@ function findResources() {
 
 function findTasks() {
   return db("projects as p")
-    .innerJoin("tasks as t", "p.id", "t.id")
+    .innerJoin("tasks as t", "p.id", "t.project_id")
     .select(
       "t.task_description",
       "t.project_completed",
